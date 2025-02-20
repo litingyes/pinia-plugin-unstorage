@@ -38,7 +38,7 @@
     "format": "eslint --fix .",
     "build": "unbuild",
     "commit": "git-cz",
-    "release": "bumpp && npm publish",
+    "release": "bumpp",
     "prepare": "husky"
   },
   "peerDependencies": {
