@@ -41,6 +41,14 @@
     "release": "bumpp && npm publish",
     "prepare": "husky"
   },
+  "peerDependencies": {
+    "pinia": "3",
+    "vue": "3"
+  },
+  "dependencies": {
+    "destr": "^2.0.3",
+    "unstorage": "^1.14.4"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^3.14.0",
     "@commitlint/cli": "^19.6.1",

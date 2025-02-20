@@ -1,1 +1,1 @@
-console.warn('typescript-starter')
+export * from './plugin'
