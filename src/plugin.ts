@@ -2,7 +2,7 @@ import type { PiniaPlugin } from 'pinia'
 import type { Driver } from 'unstorage'
 import { destr } from 'destr'
 import localStorageDriver from 'unstorage/drivers/localstorage'
-import { toRaws } from './utils'
+import { isClient, toRaws } from './utils'
 
 export interface UnstorageOptions {
   namespace?: string
@@ -15,19 +15,21 @@ export const DEFAULT_UNSTORAGE_OPTIONS: UnstorageOptions = {
 
 export function createPiniaUnstorage(_globalOptions?: UnstorageOptions) {
   const globalOptions = Object.assign(DEFAULT_UNSTORAGE_OPTIONS, _globalOptions)
-  const storage = globalOptions.driver
-    ? globalOptions.driver
-    : localStorageDriver({
-        base: globalOptions.namespace,
-      })
+  let storage = globalOptions.driver
+
+  if (!storage && isClient) {
+    storage = localStorageDriver({
+      base: globalOptions.namespace,
+    })
+  }
 
   return (({ store }) => {
-    Promise.resolve(storage.getItem(store.$id)).then((val) => {
+    Promise.resolve(storage?.getItem(store.$id)).then((val) => {
       store.$patch(destr(val))
     })
 
     store.$subscribe(async (_, state) => {
-      await storage.setItem!(store.$id, JSON.stringify(toRaws(state)), {})
+      await storage?.setItem!(store.$id, JSON.stringify(toRaws(state)), {})
     })
   }) as PiniaPlugin
 }
