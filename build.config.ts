@@ -15,4 +15,5 @@ export default defineBuildConfig({
     cjsBridge: true,
   },
   clean: true,
+
 })

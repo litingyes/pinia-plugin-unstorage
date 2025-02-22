@@ -86,6 +86,11 @@
       "@commitlint/config-conventional"
     ]
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "lint-staged": {
     "*": "eslint --fix"
   }
