@@ -20,6 +20,9 @@ importers:
       unstorage:
         specifier: ^1.14.4
         version: 1.14.4
+      usexx:
+        specifier: ^0.1.0
+        version: 0.1.0
       vue:
         specifier: '3'
         version: 3.5.13(typescript@5.7.3)
@@ -3536,6 +3539,9 @@ packages:
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
+
+  usexx@0.1.0:
+    resolution: {integrity: sha512-brkOHSluaDm0ONvkU/R4ZO/lR4cMTTuypfAarRsFKidVmTYMNGaZ6QLzgM6nzrol7ZK3vuKSMYc8cn2m9uedzg==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -7393,6 +7399,8 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  usexx@0.1.0: {}
 
   util-deprecate@1.0.2: {}
 
