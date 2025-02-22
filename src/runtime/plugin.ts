@@ -7,6 +7,7 @@ export default defineNuxtPlugin({
     const options = useRuntimeConfig().public.piniaUnstorage ?? {}
 
     const pinia = vueApp.config.globalProperties.$pinia
+
     pinia.use(createPiniaUnstorage(options))
   },
 })
