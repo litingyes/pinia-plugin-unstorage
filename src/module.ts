@@ -1,6 +1,8 @@
 import type { UnstorageOptions } from './plugin'
 import { addPlugin, createResolver, defineNuxtModule, hasNuxtModule, useLogger } from '@nuxt/kit'
 
+export type ModuleOptions = UnstorageOptions
+
 export default defineNuxtModule<UnstorageOptions>({
   meta: {
     name: 'pinia-plugin-unstorage',
