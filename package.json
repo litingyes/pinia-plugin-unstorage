@@ -1,7 +1,7 @@
 {
   "name": "pinia-plugin-unstorage",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "The best persistence plugin for pinia.",
   "author": "litingyes <luz.liting@gmail.com> (https://litingyes.top/)",
