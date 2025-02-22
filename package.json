@@ -44,6 +44,7 @@
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "format": "eslint --fix .",
+    "prebuild": "cd examples/nuxt && pnpm install && pnpm prepare",
     "build": "nuxt-module-build build",
     "commit": "git-cz",
     "release": "bumpp",
