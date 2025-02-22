@@ -5,6 +5,8 @@
     "changelogithub",
     "commitlint",
     "destr",
+    "nuxi",
+    "nuxt",
     "preid"
   ],
   // Disable the default formatter, use eslint instead

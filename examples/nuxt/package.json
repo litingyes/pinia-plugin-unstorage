@@ -1,0 +1,23 @@
+{
+  "name": "examples-nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.10.1",
+    "pinia": "^3.0.1"
+  },
+  "devDependencies": {
+    "nuxt": "latest"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  }
+}

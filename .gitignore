@@ -6,3 +6,5 @@ node_modules
 
 # output dir
 dist
+.nuxt
+.output
