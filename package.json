@@ -30,8 +30,8 @@
         "import": "./dist/module.d.mts",
         "require": "./dist/module.d.cts"
       },
-      "import": "./dist/module.d.mts",
-      "require": "./dist/module.d.cts"
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
     }
   },
   "main": "./dist/index.cjs",
