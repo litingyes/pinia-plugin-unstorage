@@ -19,25 +19,17 @@
         "dist"
     ],
     "type": "module",
-    "main": "./dist/index.cjs",
+    "main": "./dist/index.mjs",
     "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
+    "types": "./dist/index.d.mts",
     "exports": {
         ".": {
-            "types": {
-                "import": "./dist/index.d.mts",
-                "require": "./dist/index.d.cts"
-            },
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
         },
         "./nuxt": {
-            "types": {
-                "import": "./dist/module.d.mts",
-                "require": "./dist/module.d.cts"
-            },
-            "import": "./dist/module.mjs",
-            "require": "./dist/module.cjs"
+            "types": "./dist/module.d.mts",
+            "import": "./dist/module.mjs"
         }
     },
     "scripts": {
@@ -65,18 +57,10 @@
         "pinia": "3",
         "vue": "3"
     },
-    "lint-staged": {
-        "*": "eslint --fix"
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
+    "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
+    "build": {
+        "entries": [
+            "./src/index"
         ]
-    },
-    "config": {
-        "commitizen": {
-            "path": "@commitlint/cz-commitlint"
-        }
-    },
-    "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
+    }
 }
