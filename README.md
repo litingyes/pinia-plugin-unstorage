@@ -45,7 +45,7 @@ export default defineNuxtConfig({
 ```ts
 interface UnstorageOptions {
     namespace: string // prefix str to as storage key
-    driver: Driver // the storage instance in unstorage
+    driver: Driver | (() => Driver) // the storage instance in unstorage
 }
 ```
 
