@@ -2,7 +2,7 @@ import type { PiniaPlugin } from 'pinia'
 import type { Driver } from 'unstorage'
 import { destr } from 'destr'
 import localStorageDriver from 'unstorage/drivers/localstorage'
-import { omit, pick } from 'es-toolkit'
+import { isFunction, omit, pick } from 'es-toolkit'
 import { isClient, toRaws } from './utils'
 
 declare module 'pinia' {
@@ -16,7 +16,7 @@ declare module 'pinia' {
 
 export interface UnstorageOptions {
     namespace?: string
-    driver?: Driver
+    driver?: Driver | (() => Driver)
 }
 
 export const DEFAULT_UNSTORAGE_OPTIONS: UnstorageOptions = {
@@ -43,6 +43,9 @@ export function createPiniaUnstorage(_globalOptions?: UnstorageOptions) {
         storage = localStorageDriver({
             base: globalOptions.namespace,
         })
+    }
+    if (isFunction(storage)) {
+        storage = storage()
     }
 
     return (({ store, options }) => {
