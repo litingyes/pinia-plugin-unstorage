@@ -2,11 +2,10 @@ import type { PiniaPlugin } from 'pinia'
 import type { Driver } from 'unstorage'
 import { destr } from 'destr'
 import localStorageDriver from 'unstorage/drivers/localstorage'
-import { omit, pick } from 'usexx'
+import { omit, pick } from 'es-toolkit'
 import { isClient, toRaws } from './utils'
 
 declare module 'pinia' {
-    // eslint-disable-next-line unused-imports/no-unused-vars
     export interface DefineStoreOptionsBase<S, Store> {
         unstorage?: {
             pick?: string[]
