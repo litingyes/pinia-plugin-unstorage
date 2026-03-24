@@ -1,5 +1,5 @@
 import type { Pinia } from 'pinia'
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import { createPiniaUnstorage } from '../index'
 
 export default defineNuxtPlugin({
