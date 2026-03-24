@@ -20,19 +20,21 @@ import { createPinia } from 'pinia'
 import { createPiniaUnstorage } from 'pinia-plugin-unstorage'
 
 const pinia = createPinia()
-pinia.use(createPiniaUnstorage({
-  // UnstorageOptions
-}))
+pinia.use(
+    createPiniaUnstorage({
+        // UnstorageOptions
+    }),
+)
 ```
 
 ### Nuxt app
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['@pinia/nuxt', 'pinia-plugin-unstorage/nuxt'],
-  piniaUnstorage: {
-    // UnstorageOptions
-  },
+    modules: ['@pinia/nuxt', 'pinia-plugin-unstorage/nuxt'],
+    piniaUnstorage: {
+        // UnstorageOptions
+    },
 })
 ```
 
@@ -42,20 +44,24 @@ export default defineNuxtConfig({
 
 ```ts
 interface UnstorageOptions {
-  namespace: string // prefix str to as storage key
-  driver: Driver // the storage instance in unstorage
+    namespace: string // prefix str to as storage key
+    driver: Driver // the storage instance in unstorage
 }
 ```
 
 ### Store options
 
 ```ts
-export const useStore = defineStore('store', () => {
-  // ...
-}, {
-  unstorage: {
-    pick: [], // string[], state keys picked to storage
-    omit: [] // string[], state keys omitted fot storage
-  }
-})
+export const useStore = defineStore(
+    'store',
+    () => {
+        // ...
+    },
+    {
+        unstorage: {
+            pick: [], // string[], state keys picked to storage
+            omit: [], // string[], state keys omitted fot storage
+        },
+    },
+)
 ```

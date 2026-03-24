@@ -1,24 +1,24 @@
 {
-  "name": "examples-nuxt",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "dev": "nuxi dev",
-    "prepare": "nuxi prepare",
-    "build": "nuxi build",
-    "generate": "nuxi generate"
-  },
-  "dependencies": {
-    "@pinia/nuxt": "^0.10.1",
-    "pinia": "^3.0.1"
-  },
-  "devDependencies": {
-    "nuxt": "latest"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild"
-    ]
-  }
+    "name": "examples-nuxt",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "nuxi dev",
+        "prepare": "nuxi prepare",
+        "build": "nuxi build",
+        "generate": "nuxi generate"
+    },
+    "dependencies": {
+        "@pinia/nuxt": "^0.10.1",
+        "pinia": "^3.0.1"
+    },
+    "devDependencies": {
+        "nuxt": "latest"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@parcel/watcher",
+            "esbuild"
+        ]
+    }
 }

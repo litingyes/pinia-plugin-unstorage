@@ -3,10 +3,10 @@ import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import { createPiniaUnstorage } from '../index'
 
 export default defineNuxtPlugin({
-  name: 'pinia-plugin-unstorage',
-  setup({ $pinia }) {
-    const options = (useRuntimeConfig().public.piniaUnstorage ?? {});
+    name: 'pinia-plugin-unstorage',
+    setup({ $pinia }) {
+        const options = useRuntimeConfig().public.piniaUnstorage ?? {}
 
-    ($pinia as Pinia).use(createPiniaUnstorage(options))
-  },
+        ;($pinia as Pinia).use(createPiniaUnstorage(options))
+    },
 })

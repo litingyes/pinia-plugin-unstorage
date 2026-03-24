@@ -4,23 +4,25 @@ import { addPlugin, createResolver, defineNuxtModule, hasNuxtModule, useLogger }
 export type ModuleOptions = UnstorageOptions
 
 export default defineNuxtModule<UnstorageOptions>({
-  meta: {
-    name: 'pinia-plugin-unstorage',
-    configKey: 'piniaUnstorage',
-  },
-  defaults: {},
-  setup(options, nuxt) {
-    if (!hasNuxtModule('@pinia/nuxt')) {
-      const logger = useLogger()
-      logger.warn('The `@pinia/nuxt` module was not found, `pinia-plugin-unstorage` will not work.')
+    meta: {
+        name: 'pinia-plugin-unstorage',
+        configKey: 'piniaUnstorage',
+    },
+    defaults: {},
+    setup(options, nuxt) {
+        if (!hasNuxtModule('@pinia/nuxt')) {
+            const logger = useLogger()
+            logger.warn(
+                'The `@pinia/nuxt` module was not found, `pinia-plugin-unstorage` will not work.',
+            )
 
-      return
-    }
+            return
+        }
 
-    nuxt.options.runtimeConfig.public.piniaUnstorage = options as Required<UnstorageOptions>
+        nuxt.options.runtimeConfig.public.piniaUnstorage = options as Required<UnstorageOptions>
 
-    const resolver = createResolver(import.meta.url)
+        const resolver = createResolver(import.meta.url)
 
-    addPlugin(resolver.resolve('./runtime/plugin'))
-  },
+        addPlugin(resolver.resolve('./runtime/plugin'))
+    },
 })
