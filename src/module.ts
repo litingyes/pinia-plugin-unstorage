@@ -19,7 +19,11 @@ export default defineNuxtModule<UnstorageOptions>({
             return
         }
 
-        nuxt.options.runtimeConfig.public.piniaUnstorage = options as Required<UnstorageOptions>
+        // error type for piniaUnstorage ?
+        nuxt.options.runtimeConfig.public.piniaUnstorage = options as {
+            namespace: string
+            driver: () => any
+        }
 
         const resolver = createResolver(import.meta.url)
 
