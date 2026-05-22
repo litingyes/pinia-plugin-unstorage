@@ -11,6 +11,12 @@ The best persistence plugin for pinia.
 pnpm add pinia-plugin-unstorage
 ```
 
+With no options specified, `pinia-plugin-unstorage` uses the browser's local storage as the driver by default. To use a different driver, install the optional peer dependency:
+
+```bash
+pnpm add pinia-plugin-unstorage unstorage
+```
+
 ## Usage
 
 ### Vue app
